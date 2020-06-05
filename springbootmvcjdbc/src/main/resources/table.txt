@@ -1,0 +1,7 @@
+create table users(
+   phno varchar2(15),
+   email varchar2(50),
+   firtname varchar2(50),
+   lastname varchar2(50),
+   address  varchar2(50)
+)
