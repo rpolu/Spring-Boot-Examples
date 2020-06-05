@@ -17,9 +17,22 @@ public class UserDaoImpl implements UserDao {
 
 	private static final String GETUSERS = "SELECT * FROM USERS";
 
+	private static final String INSER_USER = "INSERT INTO USERS VALUES(?,?,?,?,?)";
+
+	private static final String DELET_USER = "DELETE FROM USERS WHERE PHNO=?";
+
 	public List<UserModel> getUsers() {
 		List<UserModel> users = jdbcTemplate.query(GETUSERS, new UsersRowMapper());
 		return users;
+	}
+
+	public void saveUser(UserModel userModel) {
+		jdbcTemplate.update(INSER_USER, userModel.getPhno(), userModel.getEmail(), userModel.getFirstName(),
+				userModel.getLastName(), userModel.getAddress());
+	}
+
+	public void deleteUser(String phno) {
+		jdbcTemplate.update(DELET_USER, phno);
 	}
 
 }

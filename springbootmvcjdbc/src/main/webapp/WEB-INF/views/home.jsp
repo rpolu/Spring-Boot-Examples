@@ -33,6 +33,7 @@ tr:nth-child(even) {
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Address</th>
+					<th>Action</th>
 				</tr>
 				<c:forEach items="${urs}" var="user">
 					<tr>
@@ -41,6 +42,10 @@ tr:nth-child(even) {
 						<td>${user.firstName}</td>
 						<td>${user.lastName}</td>
 						<td>${user.address}</td>
+						<td>
+                           <a href="${pageContext.servletContext.contextPath}/deleteUser/${user.phno}">Delete</a>
+                           <a href="${pageContext.servletContext.contextPath}/updateUser/${user.phno}">Eidt</a>
+                         </td>
 					</tr>
 				</c:forEach>
 			</table>

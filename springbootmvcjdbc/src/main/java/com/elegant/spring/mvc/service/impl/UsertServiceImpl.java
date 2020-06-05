@@ -17,4 +17,12 @@ public class UsertServiceImpl implements UserService {
 	public List<UserModel> getUsers() {
 		return userDao.getUsers();
 	}
+
+	public void saveUser(UserModel userModel) {
+		userDao.saveUser(userModel);
+	}
+	
+	public void deleteUser(String phno) {
+		userDao.deleteUser(phno);
+	}
 }
